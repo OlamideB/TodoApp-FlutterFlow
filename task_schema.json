@@ -1,0 +1,52 @@
+{
+  "$id": "https://example.com/schemas/task.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Task",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "completed", "created", "user"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short title of the task."
+    },
+    "details": {
+      "type": "string",
+      "description": "Optional longer description of the task."
+    },
+    "completed": {
+      "type": "boolean",
+      "description": "Whether the task is completed."
+    },
+    "created": {
+      "description": "Creation timestamp.",
+      "oneOf": [
+        { "type": "string", "format": "date-time" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["seconds", "nanoseconds"],
+          "properties": {
+            "seconds": { "type": "integer" },
+            "nanoseconds": { "type": "integer", "minimum": 0, "maximum": 999999999 }
+          }
+        }
+      ]
+    },
+    "user": {
+      "type": "string",
+      "description": "Document reference path to the owning user.",
+      "pattern": "^/users/[A-Za-z0-9_-]{28,}$"
+    }
+  },
+  "examples": [
+    {
+      "title": "Workout by 6pm",
+      "details": "details",
+      "completed": false,
+      "created": "2025-09-24T18:00:39-04:00",
+      "user": "/users/yHALoaC0OqV2pghw1bcmmj9Iwk82"
+    }
+  ]
+}
