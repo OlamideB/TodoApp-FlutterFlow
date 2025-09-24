@@ -69,7 +69,7 @@ class _LoginWidgetState extends State<LoginWidget>
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).tertiary,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
           child: Padding(
@@ -82,7 +82,7 @@ class _LoginWidgetState extends State<LoginWidget>
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/Olas_Tasks_logo.png',
+                    'assets/images/OlasTasks_logo.png',
                     width: 80.0,
                     height: 40.0,
                     fit: BoxFit.cover,

@@ -580,7 +580,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
                         icon: Icon(
-                          Icons.arrow_back,
+                          Icons.logout_sharp,
                           color: FlutterFlowTheme.of(context).primaryText,
                           size: 24.0,
                         ),
